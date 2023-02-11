@@ -112,3 +112,20 @@ body {
 
  
 } */
+
+.border-gradient-rounded {
+  border-radius: 6px;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.border-gradient-rounded::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+
+  border: 2px solid transparent;
+  border-image: linear-gradient(to top, red 0%, blue 100%);
+  border-image-slice: 1;
+}

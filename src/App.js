@@ -9,17 +9,17 @@ import {
 } from "react-router-dom";
 import Main from "./layout/Main";
 import Home from "./pages/home/Home";
-import Cast from "./pages/cast/Cast";
 import CastDetails from "./pages/castDetails/CastDetails";
 import Notfound from "./pages/notfound/Notfound";
+import AllCasts from "./pages/allCasts/AllCasts";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Main />}>
         <Route path="/" element={<Home />} />
-        <Route path="/cast" element={<Cast />} />
-        <Route path="/" element={<CastDetails />} />
+        <Route path="/allCasts" element={<AllCasts />} />
+        <Route path="/castDetails" element={<CastDetails />} />
         <Route path="*" element={<Notfound />} />
       </Route>
     )
