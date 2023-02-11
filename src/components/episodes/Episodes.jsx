@@ -58,6 +58,61 @@ const Episodes = () => {
           Episodes
         </h2>
         <Slider {...settings}>
+          <div className="relative max-w-[330px] md:w-[330px] h-[96px] p-5 ">
+            <img src={substract} className="" alt="" />
+            <div className="absolute top-[40px] left-[50px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                s1254
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                Pilot
+              </h3>
+            </div>
+          </div>
+          <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
+            <img src={substract} alt="" />
+            <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                s1254
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                Pilot
+              </h3>
+            </div>
+          </div>
+          <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
+            <img src={substract} alt="" />
+            <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                s1254
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                Pilot
+              </h3>
+            </div>
+          </div>
+          <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
+            <img src={substract} alt="" />
+            <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                s1254
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                Pilot
+              </h3>
+            </div>
+          </div>
+          <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
+            <img src={substract} alt="" />
+            <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                s1254
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                Pilot
+              </h3>
+            </div>
+          </div>
           <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
             <img src={substract} alt="" />
             <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">

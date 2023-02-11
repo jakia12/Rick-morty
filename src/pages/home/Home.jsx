@@ -6,6 +6,7 @@ import Cast from "../../components/cast/Cast";
 import Episodes from "../../components/episodes/Episodes";
 import HeroBanner from "../../components/heroSection/HeroBanner";
 import starBg from "../../assets/media-assets/Home page/Background  Elements/star.png";
+import Locations from "../../components/locations/Locations";
 
 const Home = () => {
   return (
@@ -47,6 +48,9 @@ const Home = () => {
       >
         {/* episode section */}
         <Episodes />
+
+        {/* location section */}
+        <Locations />
       </section>
     </>
   );
