@@ -1,0 +1,49 @@
+.border-gradient-rounded {
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.border-gradient-rounded::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+
+  border: 1px solid transparent;
+  border-image: linear-gradient(to top, #9dfe00 0%, #14d9e5 100%);
+  border-image-slice: 1;
+}
+
+.character-detail-box {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.character-detail-box::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+
+  border: 1px solid transparent;
+  border-image: linear-gradient(to top, #9dfe00 0%, #14d9e5 100%);
+  border-image-slice: 1;
+}
+
+/****more info box*****/
+.more-info-box {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.more-info-box::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+
+  border: 1px solid transparent;
+  border-image: linear-gradient(to top, #9dfe00 0%, #14d9e5 100%);
+  border-image-slice: 1;
+}
