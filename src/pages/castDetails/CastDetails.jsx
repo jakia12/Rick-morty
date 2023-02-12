@@ -3,11 +3,14 @@ import detailsBg from "../../assets/media-assets/Cast Details/detailsBg.png";
 import starBg from "../../assets/media-assets/Cast Details/Star.png";
 import bannerLogo from "../../assets/media-assets/Logo.png";
 import DivPerson from "../../assets/placeholder-images/2.jpg";
-import { characterDetails } from "../../data/Placeholder";
+import { characterDetails, moreInfos } from "../../data/Placeholder";
 import boxImage from "../../assets/media-assets/Cast Details/Icons/vector-svg/Status.svg";
 import OriginImage from "../../assets/media-assets/Cast Details/Icons/vector-svg/Origin.svg";
 
 import imageBox from "../../assets/media-assets/Cast Details/Icons/vector-svg/image.svg";
+import episodesBox from "../../assets/media-assets/Cast Details/Icons/vector-svg/Episodes.svg";
+import episodeIcon from "../../assets/media-assets/Cast Details/Icons/vector-svg/episode.svg";
+import episodeText from "../../assets/media-assets/Cast Details/Icons/vector-svg/episodeIcon.svg";
 
 import "./CastDetails.css";
 
@@ -90,28 +93,62 @@ const CastDetails = () => {
                 ))}
               </div>
               {/* more character info */}
-              <div className="flex items-center">
-                <div className="relative max-w-[348px] max-h-[75.69px]  md:w-full m-4 md:max-w-[800px] md:max-h-[174px]">
+              {moreInfos.map((moreinfo) => (
+                <div className="relative max-w-[348px] max-h-[75.69px]  md:w-full m-4 pb-[10px] md:max-w-[800px] md:max-h-[174px]">
                   <img
                     src={OriginImage}
                     className="max-w-[348px] max-h-[75.69px] md:w-full md:max-w-[800px] md:max-h-[174px]"
                     alt=""
                   />
-                  <div className="absolute top-[18%] md:top-[19%]  left-[20%]">
+                  <div className="absolute top-[9%] md:top-[9%] left-[10%]  md:left-[4%] text-left">
                     <span className="w-[40px] h-[36.97px]">
                       <img
-                        src={characDetail.icon}
+                        src={moreinfo.icon}
                         className="w-[20px] h-[20px] md:w-[48px] md:h-[48px]"
                         alt=""
                       />
                     </span>
-                    <p className="text-[12px] md:text-[14px] text-white font-TTTravels md:my-[4px]">
-                      {characDetail.statusName}
+
+                    <p className="text-[12px] md:text-[14px] text-white font-TTTravels my-[2px] md:my-[4px] ">
+                      {moreinfo.title}
                     </p>
+
                     <h3 className="text-[14px] md:text-[18px] font-TTTravels text-white">
-                      {characDetail.statusValue}
+                      {moreinfo.subTitle}
                     </h3>
                   </div>
+                  {/* redirect icon */}
+                  <span className="text-white absolute right-[-64%] md:right-[5%] top-[60%]">
+                    <img
+                      src={moreinfo.redirectIcon}
+                      className="w-[14px] h-[14px] md:w-[32px] md:h-[32px]"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              ))}
+
+              <div className="relative  max-w-[348px] max-h-[181.4px]  md:w-full  pb-[10px] md:max-w-[800px] md:max-h-[417px]">
+                <img
+                  src={episodesBox}
+                  className="max-w-[348px] max-h-[181.4px]  md:w-full m-4 pb-[10px] md:max-w-[800px] md:max-h-[417px]"
+                  alt=""
+                />
+                <div className="absolute top-[9%] md:top-[9%] left-[10%]  md:left-[4%] text-left">
+                  <span>
+                    <img
+                      src={episodeIcon}
+                      className="w-[20px] h-[20px] md:w-[40px] md:h-[30px]"
+                      alt=""
+                    />
+                  </span>
+                  <span className="mt-4 block">
+                    <img
+                      src={episodeText}
+                      className="w-[115px] h-[24px] "
+                      alt=""
+                    />
+                  </span>
                 </div>
               </div>
             </div>
