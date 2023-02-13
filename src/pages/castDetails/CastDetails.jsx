@@ -11,6 +11,7 @@ import imageBox from "../../assets/media-assets/Cast Details/Icons/vector-svg/im
 import episodesBox from "../../assets/media-assets/Cast Details/Icons/vector-svg/Episodes.svg";
 import episodeIcon from "../../assets/media-assets/Cast Details/Icons/vector-svg/episode.svg";
 import episodeText from "../../assets/media-assets/Cast Details/Icons/vector-svg/episodeIcon.svg";
+import seperatorIcon from "../../assets/media-assets/Cast Details/Icons/vector-svg/seperator.svg";
 
 import "./CastDetails.css";
 
@@ -41,28 +42,31 @@ const CastDetails = () => {
         <div className="py-[58px]">
           <img src={bannerLogo} className="mx-auto w-[227px] h-[48px]" alt="" />
         </div>
-        <div className="container  mx-auto max-w-6xl w-full px-11">
-          <div className="md:flex justify-center flex-wrap">
-            <div className="w-5/12 rounded-md flex justify-center items-center">
+        <div className="container  mx-auto max-w-7xl w-full px-11">
+          <div className="md:flex justify-center items-center flex-wrap">
+            <div className="w-4/12 rounded-md flex justify-center items-center">
               <div>
                 <h2 className="font-TTTravels text-[24px] md:text-[48px] mb-[15px] text-lightBlue font-[600] text-center">
                   Rick Martenz
                 </h2>
-                <div className="relative w-[240px] h-[240px] flex-shrink-0 md:flex-shrink md:w-[400px] md:h-[400px]">
+                <div className="relative w-[240px] h-[240px] flex-shrink-0 md:w-full md:flex-shrink md:max-w-[400px] md:max-h-[400px]">
                   <img
                     src={imageBox}
-                    className="w-[240px] h-[240px]  md:w-[400px] md:h-[400px] "
+                    className="absolute top-0 left-0 "
                     alt=""
                   />
                   <img
                     src={DivPerson}
-                    className="w-[180px] h-[180px] md:w-[300px] md:h-[300px] absolute top-[13%] left-[13%] rounded-sm"
+                    className="w-[180px] h-[180px] md:w-full md:max-w-[250px] md:h-[250px] absolute top-[2%] left-[2%] rounded-sm"
                     alt=""
                   />
                 </div>
               </div>
             </div>
-            <div className="w-7/12">
+            <div className="w-2/12 hidden md:flex justify-center items-center">
+              <img src={seperatorIcon} alt="" />
+            </div>
+            <div className="w-6/12">
               <div className="ml-15">
                 {/* character info */}
                 <div className="flex items-center flex-nowrap">
