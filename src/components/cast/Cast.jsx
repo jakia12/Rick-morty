@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chart1 from "../../assets/placeholder-images/1.jpg";
 import Chart2 from "../../assets/placeholder-images/2.jpg";
 import Chart3 from "../../assets/placeholder-images/7.jpg";
@@ -12,6 +12,17 @@ import Slider from "react-slick";
 import "./Cast.css";
 
 const Cast = () => {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results);
+        setCharacters(data.results);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   var settings = {
     dots: false,
     infinite: true,
@@ -63,148 +74,28 @@ const Cast = () => {
         </div>
 
         <Slider {...settings}>
-          <div className="relative max-w-[235px] md:w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img
-                  class="rounded max-w-[178px] md:w-[178px]"
-                  src={Chart1}
-                  alt=""
-                />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative max-w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded max-w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="w-2/5 md:w-1/5">
-            <div className="relative w-[235px] h-[268px] m-3">
+          {characters.map((character) => (
+            <div
+              className="relative max-w-[235px] md:w-[235px] h-[268px] m-3"
+              key={character.id}
+            >
               <img src={castbg} alt="" />
               <div className="absolute top-[19px] left-[27px] w-full h-full">
                 <a href="#">
-                  <img class="rounded w-[178px]" src={Chart1} alt="" />
+                  <img
+                    class="rounded max-w-[178px] md:w-[178px]"
+                    src={character.image}
+                    alt=""
+                  />
                 </a>
                 <div className="pt-[16px]">
                   <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                    Noteworthy
+                    {character.name}
                   </h5>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="relative max-w-[235px] md:w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img
-                  class="rounded max-w-[178px] md:w-[178px]"
-                  src={Chart1}
-                  alt=""
-                />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative max-w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded max-w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-[235px] h-[268px] m-3">
-            <img src={castbg} alt="" />
-            <div className="absolute top-[19px] left-[27px] w-full h-full">
-              <a href="#">
-                <img class="rounded w-[178px]" src={Chart1} alt="" />
-              </a>
-              <div className="pt-[16px]">
-                <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                  Noteworthy
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="w-2/5 md:w-1/5">
-            <div className="relative w-[235px] h-[268px] m-3">
-              <img src={castbg} alt="" />
-              <div className="absolute top-[19px] left-[27px] w-full h-full">
-                <a href="#">
-                  <img class="rounded w-[178px]" src={Chart1} alt="" />
-                </a>
-                <div className="pt-[16px]">
-                  <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-                    Noteworthy
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </section>

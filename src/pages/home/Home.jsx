@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bannerBg from "../../assets/media-assets/Home page/Background  Elements/bg.png";
 
 import bannerLogo from "../../assets/media-assets/Logo.png";
