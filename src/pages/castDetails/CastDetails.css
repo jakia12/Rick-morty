@@ -32,18 +32,40 @@
 }
 
 /****more info box*****/
-.more-info-box {
+/* .gradient {
   border-radius: 4px;
   overflow: hidden;
 }
 
-.more-info-box::before {
+.gradient::before {
   content: "";
   display: block;
   box-sizing: border-box;
   height: 100%;
 
   border: 1px solid transparent;
-  border-image: linear-gradient(to top, #9dfe00 0%, #14d9e5 100%);
+  background-image: linear-gradient(to top, #9dfe00 0%, #14d9e5 100%);
   border-image-slice: 1;
+} */
+
+/* width */
+#custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+#custom-scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 6px;
+}
+
+/* Handle */
+#custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #14d9e5;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+#custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #0acad4;
 }

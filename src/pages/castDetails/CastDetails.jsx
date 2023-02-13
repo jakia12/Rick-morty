@@ -18,6 +18,7 @@ const CastDetails = () => {
   console.log(characterDetails);
   return (
     <section
+      className="pb-20"
       style={{
         backgroundImage: `url(${detailsBg})`,
         backgroundColor: "#191d2991",
@@ -62,93 +63,130 @@ const CastDetails = () => {
               </div>
             </div>
             <div className="w-7/12">
-              {/* character info */}
-              <div className="flex items-center md:ml-15 flex-nowrap">
-                {characterDetails.map((characDetail) => (
-                  <div
-                    className="relative m-3 md:m-4 w-[104px] h-[75px] md:w-[240px] md:h-[174px] flex-shrink-0 md:flex-shrink"
-                    key={characDetail.id}
-                  >
+              <div className="ml-15">
+                {/* character info */}
+                <div className="flex items-center flex-nowrap">
+                  {characterDetails.map((characDetail) => (
+                    <div
+                      className="relative m-3 md:m-4 w-[104px] h-[75px] md:w-[240px] md:h-[174px] flex-shrink-0 md:flex-shrink"
+                      key={characDetail.id}
+                    >
+                      <img
+                        src={boxImage}
+                        className="w-[104px] h-[75px] md:w-[240px] md:h-[174px] "
+                        alt=""
+                      />
+                      <div className="absolute top-[18%] md:top-[19%]  left-[20%]">
+                        <span className="w-[40px] h-[36.97px]">
+                          <img
+                            src={characDetail.icon}
+                            className="w-[20px] h-[20px] md:w-[48px] md:h-[48px]"
+                            alt=""
+                          />
+                        </span>
+                        <p className="text-[12px] md:text-[14px] text-white font-TTTravels md:my-[4px]">
+                          {characDetail.statusName}
+                        </p>
+                        <h3 className="text-[14px] md:text-[18px] font-TTTravels text-white">
+                          {characDetail.statusValue}
+                        </h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* more character info */}
+                {moreInfos.map((moreinfo) => (
+                  <div className="relative max-w-[348px] max-h-[75.69px]  md:w-full m-4 pb-[10px] md:max-w-[800px] md:max-h-[174px]">
                     <img
-                      src={boxImage}
-                      className="w-[104px] h-[75px] md:w-[240px] md:h-[174px] "
+                      src={OriginImage}
+                      className="max-w-[348px] max-h-[75.69px] md:w-full md:max-w-[800px] md:max-h-[174px]"
                       alt=""
                     />
-                    <div className="absolute top-[18%] md:top-[19%]  left-[20%]">
+                    <div className="absolute top-[9%] md:top-[9%] left-[10%]  md:left-[4%] text-left">
                       <span className="w-[40px] h-[36.97px]">
                         <img
-                          src={characDetail.icon}
+                          src={moreinfo.icon}
                           className="w-[20px] h-[20px] md:w-[48px] md:h-[48px]"
                           alt=""
                         />
                       </span>
-                      <p className="text-[12px] md:text-[14px] text-white font-TTTravels md:my-[4px]">
-                        {characDetail.statusName}
+
+                      <p className="text-[12px] md:text-[14px] text-white font-TTTravels my-[2px] md:my-[4px] ">
+                        {moreinfo.title}
                       </p>
+
                       <h3 className="text-[14px] md:text-[18px] font-TTTravels text-white">
-                        {characDetail.statusValue}
+                        {moreinfo.subTitle}
                       </h3>
                     </div>
-                  </div>
-                ))}
-              </div>
-              {/* more character info */}
-              {moreInfos.map((moreinfo) => (
-                <div className="relative max-w-[348px] max-h-[75.69px]  md:w-full m-4 pb-[10px] md:max-w-[800px] md:max-h-[174px]">
-                  <img
-                    src={OriginImage}
-                    className="max-w-[348px] max-h-[75.69px] md:w-full md:max-w-[800px] md:max-h-[174px]"
-                    alt=""
-                  />
-                  <div className="absolute top-[9%] md:top-[9%] left-[10%]  md:left-[4%] text-left">
-                    <span className="w-[40px] h-[36.97px]">
+                    {/* redirect icon */}
+                    <span className="text-white absolute right-[-64%] md:right-[5%] top-[60%]">
                       <img
-                        src={moreinfo.icon}
-                        className="w-[20px] h-[20px] md:w-[48px] md:h-[48px]"
+                        src={moreinfo.redirectIcon}
+                        className="w-[14px] h-[14px] md:w-[32px] md:h-[32px]"
                         alt=""
                       />
                     </span>
-
-                    <p className="text-[12px] md:text-[14px] text-white font-TTTravels my-[2px] md:my-[4px] ">
-                      {moreinfo.title}
-                    </p>
-
-                    <h3 className="text-[14px] md:text-[18px] font-TTTravels text-white">
-                      {moreinfo.subTitle}
-                    </h3>
                   </div>
-                  {/* redirect icon */}
-                  <span className="text-white absolute right-[-64%] md:right-[5%] top-[60%]">
-                    <img
-                      src={moreinfo.redirectIcon}
-                      className="w-[14px] h-[14px] md:w-[32px] md:h-[32px]"
-                      alt=""
-                    />
-                  </span>
-                </div>
-              ))}
+                ))}
 
-              <div className="relative  max-w-[348px] max-h-[181.4px]  md:w-full  pb-[10px] md:max-w-[800px] md:max-h-[417px]">
-                <img
+                {/* episodes info */}
+                <div
+                  className="relative w-[348px] h-[250px]  pb-[10px] md:w-full md:max-w-[800px] md:min-h-[417px] gradient border-r-[1px] border-r-[#9dfe0092] border-l-[1px] border-l-[#14dbe5a6] rounded-md mx-4 mb-20 "
+                  style={{
+                    backgroundImage: `url(${episodesBox})`,
+
+                    backgroundPosition: "center center",
+                    backgroundSize: "cover",
+                    maxWidth: 800,
+
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  {/* <img
                   src={episodesBox}
-                  className="max-w-[348px] max-h-[181.4px]  md:w-full m-4 pb-[10px] md:max-w-[800px] md:max-h-[417px]"
+                  className="absolute top-0 left-0 w-full h-full"
                   alt=""
-                />
-                <div className="absolute top-[9%] md:top-[9%] left-[10%]  md:left-[4%] text-left">
-                  <span>
-                    <img
-                      src={episodeIcon}
-                      className="w-[20px] h-[20px] md:w-[40px] md:h-[30px]"
-                      alt=""
-                    />
-                  </span>
-                  <span className="mt-4 block">
-                    <img
-                      src={episodeText}
-                      className="w-[115px] h-[24px] "
-                      alt=""
-                    />
-                  </span>
+                /> */}
+                  {/* top-[9%] md:top-[9%] left-[10%]  md:left-[9%]  */}
+                  <div className="absolute text-left w-full h-full top-0 left-0">
+                    <div
+                      id="custom-scrollbar"
+                      className="p-8 w-full h-full overflow-y-scroll "
+                    >
+                      <span>
+                        <img
+                          src={episodeIcon}
+                          className="w-[20px] h-[20px] md:w-[40px] md:h-[30px]"
+                          alt=""
+                        />
+                      </span>
+                      <span className="mt-4 block">
+                        <img
+                          src={episodeText}
+                          className="w-[115px] h-[24px] "
+                          alt=""
+                        />
+                      </span>
+                      <ul>
+                        <li>Rick Potion #9</li>
+                        <li>Raising Gazorpazorp</li>
+                        <li>Rixty Minutes</li>
+                        <li>Something Ricked This Way Comes</li>
+                        <li>Close Rick-counters of the Rick</li>
+                        <li>Rick Potion #9</li>
+                        <li>Raising Gazorpazorp</li>
+                        <li>Rixty Minutes</li>
+                        <li>Something Ricked This Way Comes</li>
+                        <li>Close Rick-counters of the Rick</li>
+                        <li>Rick Potion #9</li>
+                        <li>Raising Gazorpazorp</li>
+                        <li>Rixty Minutes</li>
+                        <li>Something Ricked This Way Comes</li>
+                        <li>Close Rick-counters of the Rick</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
