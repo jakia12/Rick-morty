@@ -36,7 +36,7 @@ const Cast = () => {
 
     slidesToScroll: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -69,12 +69,12 @@ const Cast = () => {
   return (
     <section className="py-[64px]">
       <div className=" container px-6 md:px-0 mx-auto md:max-w-7xl w-full">
-        <div className="flex items-center justify-between mb-1">
-          <h2 className="text-[24] font-[500] capitalize font-TTTravels text-white ml-5">
+        <div className="flex items-center justify-between mb-1 mx-[25px]">
+          <h2 className="text-[24] font-[500] capitalize font-TTTravels text-white ">
             Meet the cast
           </h2>
           <Link to="/allCasts">
-            <button className="py-2 px-5 rounded-sm border border-lemon text-white text-[18px] font-[400] ">
+            <button className="py-2 px-4 md:px-5 rounded-sm border border-lemon text-white text-[14px] md:text-[18px] font-[400] ">
               View All
             </button>
           </Link>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import spiralBg from "../../assets/media-assets/Home page/Background  Elements/spiral-sm.png";
 import substract from "../../assets/placeholder-images/substract.svg";
 import Slider from "react-slick";
 
@@ -21,10 +20,10 @@ const Episodes = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-
+    pauseOnHover: true,
     slidesToScroll: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -55,40 +54,33 @@ const Episodes = () => {
     // fade: true,
   };
   return (
-    <section
-      style={{
-        backgroundImage: `url(${spiralBg})`,
-        backgroundPosition: "right",
-        backgroundSize: "auto",
-        backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "screen",
-        minHeight: 314,
-      }}
-    >
-      <div className="container  mx-auto max-w-7xl w-full">
-        <h2 className="text-[24] font-[500] capitalize font-TTTravels text-white text-left">
-          Episodes
-        </h2>
-        <Slider {...settings}>
-          {episodes.map((episode) => (
-            <div
-              className="relative max-w-[330px] md:w-[330px] h-[96px] p-5 "
-              key={episode.id}
-            >
-              <img src={substract} className="" alt="" />
-              <div className="absolute top-[40px] left-[50px] w-full h-full  text-left">
-                <span className="text-[13px] text-white font-TTTravels capitalize">
-                  {episode.episode}
-                </span>
-                <h3 className="text-white font-TTTravels text-[16px] capitalize">
-                  {episode.name}
-                </h3>
-              </div>
+    <div>
+      <h2 className="text-[24] font-[500] capitalize font-TTTravels text-white text-left md:ml-3 ml-3">
+        Episodes
+      </h2>
+      <Slider {...settings}>
+        {episodes.map((episode) => (
+          <div
+            className="relative max-w-[330px] md:w-[330px] h-[96px] p-5  "
+            key={episode.id}
+          >
+            <img
+              src={substract}
+              className="absolute top-0 left-0 w-[94%] h-full object-contain"
+              alt=""
+            />
+            <div className="absolute top-[22%] md:top-[20%] left-[8%] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                {episode.episode}
+              </span>
+              <h3 className="text-white font-TTTravels text-[13px] md:text-[14px] capitalize">
+                {episode.name}
+              </h3>
             </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

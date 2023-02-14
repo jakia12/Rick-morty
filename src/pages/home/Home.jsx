@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import bannerBg from "../../assets/media-assets/Home page/Background  Elements/bg.png";
-
+import spiralBg from "../../assets/media-assets/Home page/Background  Elements/spiral-sm.png";
 import bannerLogo from "../../assets/media-assets/Logo.png";
 import Cast from "../../components/cast/Cast";
 import Episodes from "../../components/episodes/Episodes";
@@ -33,7 +33,7 @@ const Home = () => {
           }}
         >
           {/* banner logo */}
-          <div className="py-[58px]">
+          <div className="pt-[58px] ">
             <img
               src={bannerLogo}
               className="mx-auto w-[227px] h-[48px]"
@@ -56,7 +56,7 @@ const Home = () => {
           backgroundColor: "#191d29a0",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          minHeight: 450,
+          minHeight: 300,
           backgroundBlendMode: "screen",
         }}
       >
@@ -65,15 +65,28 @@ const Home = () => {
             backgroundColor: "#191d29a0",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            minHeight: 550,
+            minHeight: 300,
             backgroundBlendMode: "screen",
           }}
         >
-          {/* episode section */}
-          <Episodes />
-
-          {/* location section */}
-          <Locations />
+          {/* episode section and location section */}
+          <section
+            style={{
+              backgroundImage: `url(${spiralBg})`,
+              backgroundPosition: "right",
+              backgroundSize: "auto",
+              backgroundRepeat: "no-repeat",
+              backgroundBlendMode: "screen",
+              minHeight: 314,
+            }}
+          >
+            <div className="container  mx-auto md:max-w-7xl w-full px-4 md:px-0">
+              {/* episode section */}
+              <Episodes />
+              {/* location section */}
+              <Locations />
+            </div>
+          </section>
         </div>
       </section>
     </>

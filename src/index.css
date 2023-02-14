@@ -113,7 +113,38 @@ body {
  
 } */
 /*******slick slide margin********/
+.slick-prev {
+  display: none !important;
+}
 
+.slick-next {
+  right: 1% !important;
+  top: 48% !important;
+}
 .innerMargin {
   margin: 0 15px;
+}
+
+.slick-next:before {
+  content: "\f105" !important;
+  color: #9dfe00 !important;
+  font-size: 20px !important;
+  width: 40px;
+  display: block;
+  height: 40px;
+
+  line-height: 40px !important;
+  background-color: #fff !important;
+  border-radius: 50%;
+  font-family: "FontAwesome" !important;
+}
+
+@media screen and (max-width: 768px) {
+  .slick-next:before {
+    width: 32px;
+    display: block;
+    height: 32px;
+
+    line-height: 32px !important;
+  }
 }
