@@ -139,6 +139,10 @@ body {
   font-family: "FontAwesome" !important;
 }
 
+.pointer {
+  cursor: pointer !important;
+}
+
 @media screen and (max-width: 768px) {
   .slick-next:before {
     width: 32px;

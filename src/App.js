@@ -19,7 +19,7 @@ function App() {
       <Route path="/" element={<Main />}>
         <Route path="/" element={<Home />} />
         <Route path="/allCasts" element={<AllCasts />} />
-        <Route path="/castDetails" element={<CastDetails />} />
+        <Route path="/characters/:castId" element={<CastDetails />} loader />
         <Route path="*" element={<Notfound />} />
       </Route>
     )

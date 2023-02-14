@@ -9,9 +9,9 @@ import Chart7 from "../../assets/placeholder-images/t5.jpg";
 import border from "../../assets/placeholder-images/border.jpg";
 import SingleCast from "../../components/singleCast/SingleCast";
 import castbg from "../../assets/placeholder-images/character.svg";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "./Cast.css";
-import { Link } from "react-router-dom";
 
 const Cast = () => {
   const [characters, setCharacters] = useState([]);
@@ -82,7 +82,7 @@ const Cast = () => {
 
         <Slider className="m-4" {...settings}>
           {characters.map((character) => (
-            <div className="m-2">
+            <div className="m-2 pointer">
               <div
                 className="relative bg-image max-w-[92%] w-[200px] h-[200px]   md:w-[320px] md:h-[296px]  "
                 style={{
@@ -93,23 +93,26 @@ const Cast = () => {
                 }}
               >
                 {/* <img
-        src={castbg}
-        className="absolute top-0 left-0 w-full h-full object-contain"
-        alt=""
-      /> */}
+      src={castbg}
+      className="absolute top-0 left-0 w-full h-full object-contain"
+      alt=""
+    /> */}
 
                 <div className="absolute top-[15%] left-[17%] md:left-[10%] ">
-                  <a href="#">
+                  <Link to={`/characters/${character.id}`}>
                     <img
-                      className="rounded max-w-[100%] w-[129px] h-[105px] md:w-[187px] md:h-[155px] overflow-hidden"
+                      className="rounded max-w-[100%] w-[129px] h-[105px] md:w-[187px] md:h-[155px] overflow-hidden  cursor-pointer pointer"
                       src={character.image}
                       alt=""
                     />
-                  </a>
+                  </Link>
+
                   <div className="pt-[16px]">
-                    <h5 className="mb-2 text-[15px] font-[400] font-poppins text-left tracking-tight  text-white pb-5">
-                      {character.name}
-                    </h5>
+                    <Link to={`/characters/${character.id}`}>
+                      <h5 className="mb-2 text-[15px] font-[400] font-poppins text-left tracking-tight  text-white pb-5 cursor-pointer hover:decoration-black">
+                        {character.name}
+                      </h5>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -14,6 +14,7 @@ import episodeText from "../../assets/media-assets/Cast Details/Icons/vector-svg
 import seperatorIcon from "../../assets/media-assets/Cast Details/Icons/vector-svg/seperator.svg";
 
 import "./CastDetails.css";
+import { getSingleCharacter } from "../../util/api";
 
 const CastDetails = () => {
   console.log(characterDetails);
@@ -201,4 +202,10 @@ const CastDetails = () => {
   );
 };
 
+//export the loader from here
+export const loader = ({ params }) => {
+  const uId = params.castId;
+
+  return getSingleCharacter(uId);
+};
 export default CastDetails;
