@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Main from "./layout/Main";
 import Home from "./pages/home/Home";
-import CastDetails from "./pages/castDetails/CastDetails";
+import CastDetails, { loader } from "./pages/castDetails/CastDetails";
 import Notfound from "./pages/notfound/Notfound";
 import AllCasts from "./pages/allCasts/AllCasts";
 
@@ -19,7 +19,11 @@ function App() {
       <Route path="/" element={<Main />}>
         <Route path="/" element={<Home />} />
         <Route path="/allCasts" element={<AllCasts />} />
-        <Route path="/characters/:castId" element={<CastDetails />} loader />
+        <Route
+          path="/characters/:castId"
+          element={<CastDetails />}
+          loader={loader}
+        />
         <Route path="*" element={<Notfound />} />
       </Route>
     )

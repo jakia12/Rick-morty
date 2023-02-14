@@ -143,6 +143,8 @@ body {
   cursor: pointer !important;
 }
 
+/*******text shadow******/
+
 @media screen and (max-width: 768px) {
   .slick-next:before {
     width: 32px;

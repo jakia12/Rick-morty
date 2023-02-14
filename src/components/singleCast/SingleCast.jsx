@@ -1,7 +1,7 @@
 import React from "react";
 import castbg from "../../assets/placeholder-images/character.svg";
 import "./SingleCast.css";
-
+import { Link } from "react-router-dom";
 const SingleCast = ({ character }) => {
   return (
     <div
