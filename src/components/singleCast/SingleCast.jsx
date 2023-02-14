@@ -1,16 +1,35 @@
 import React from "react";
+import castbg from "../../assets/placeholder-images/character.svg";
+import "./SingleCast.css";
 
-const SingleCast = () => {
+const SingleCast = ({ character }) => {
   return (
-    <div className="relative max-w-[235px] md:w-[235px] h-[268px] m-3">
-      <img src={castbg} alt="" />
-      <div className="absolute top-[19px] left-[27px] w-full h-full">
+    <div
+      className="relative bg-image max-w-[104%] w-[200px] h-[200px]   md:w-[320px] md:h-[296px]  "
+      style={{
+        backgroundImage: `url(${castbg})`,
+        backgroundPosition: "center center",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* <img
+        src={castbg}
+        className="absolute top-0 left-0 w-full h-full object-contain"
+        alt=""
+      /> */}
+
+      <div className="absolute top-[15%] left-[17%] md:left-[10%] ">
         <a href="#">
-          <img class="rounded max-w-[178px] md:w-[178px]" src={Chart1} alt="" />
+          <img
+            className="rounded max-w-[100%] w-[129px] h-[105px] md:w-[187px] md:h-[155px] overflow-hidden"
+            src={character.image}
+            alt=""
+          />
         </a>
         <div className="pt-[16px]">
-          <h5 className="mb-2 text-[16px] font-[500] font-poppins text-left tracking-tight  text-white pb-5">
-            Noteworthy
+          <h5 className="mb-2 text-[15px] font-[400] font-poppins text-left tracking-tight  text-white pb-5">
+            {character.name}
           </h5>
         </div>
       </div>

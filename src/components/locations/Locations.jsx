@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import substract from "../../assets/placeholder-images/substract.svg";
 const Locations = () => {
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    fetch(" https://rickandmortyapi.com/api/location")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results);
+        setLocations(data.results);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -46,72 +58,22 @@ const Locations = () => {
         Episodes
       </h2>
       <Slider {...settings}>
-        <div className="relative max-w-[330px] md:w-[330px] h-[96px] p-5 ">
-          <img src={substract} className="" alt="" />
-          <div className="absolute top-[40px] left-[50px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
+        {locations.map((location) => (
+          <div
+            className="relative max-w-[330px] md:w-[330px] h-[96px] p-5 "
+            key={location.id}
+          >
+            <img src={substract} className="" alt="" />
+            <div className="absolute top-[40px] left-[50px] w-full h-full  text-left">
+              <span className="text-[13px] text-white font-TTTravels capitalize">
+                #{location.id}
+              </span>
+              <h3 className="text-white font-TTTravels text-[16px] capitalize">
+                {location.name}
+              </h3>
+            </div>
           </div>
-        </div>
-        <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
-          <img src={substract} alt="" />
-          <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
-          </div>
-        </div>
-        <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
-          <img src={substract} alt="" />
-          <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
-          </div>
-        </div>
-        <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
-          <img src={substract} alt="" />
-          <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
-          </div>
-        </div>
-        <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
-          <img src={substract} alt="" />
-          <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
-          </div>
-        </div>
-        <div className="relative max-w-[340px] md:w-[340px] h-[96px] m-3">
-          <img src={substract} alt="" />
-          <div className="absolute top-[13px] left-[24px] w-full h-full  text-left">
-            <span className="text-[13px] text-white font-TTTravels capitalize">
-              s1254
-            </span>
-            <h3 className="text-white font-TTTravels text-[16px] capitalize">
-              Pilot
-            </h3>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );
